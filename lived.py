@@ -5,13 +5,13 @@ from datetime import datetime
 
 # Main Window & Configuration
 App = Tk()
-App.title("Age Calculator")
+App.title("Days lived Calculator")
 App['background'] = 'white'
 App.geometry('300x300')
 
 # 'Enter Your DOB' Label
-lbl = Label(App, text='Enter Your DOB', background='white', foreground='black')
-lbl.grid(row=0, column=0, columnspan=2)
+Lbl = Label(App, text='Enter Your DOB', background='white', foreground='black')
+Lbl.grid(row=0, column=0, columnspan=2)
 
 # Date Label & Entry widget
 dateL = Label(App, text='Date:', background='white', foreground='black')
@@ -41,9 +41,9 @@ def find_days():
     day = int(dateE.get())
     dob = datetime(year=year, month=month, day=day)
 
-    time_now = datetime.now()
-    time_dif = time_now - dob
-    msg = Label(App, text='You lived ' + str(time_dif.days) + ' days!', background='white',
+    timeNow = datetime.now()
+    timeDif = time_now - dob
+    msg = Label(App, text='You lived ' + str(timeDif.days) + ' days!', background='white',
                 foreground='black')
     msg.grid(row=3, column=0, columnspan=3)
 
@@ -55,9 +55,9 @@ def find_sec():
     day = int(dateE.get())
     dob = datetime(year=year, month=month, day=day)
 
-    time_now = datetime.now()
-    time_dif = time_now - dob
-    msg = Label(App, text='You lived ' + str(time_dif.total_seconds()) + ' seconds!', background='white',
+    timeNow = datetime.now()
+    timeDif = time_now - dob
+    msg = Label(App, text='You lived ' + str(timeDif.total_seconds()) + ' seconds!', background='white',
                 foreground='black')
     msg.grid(row=4, column=0, columnspan=6)
 
